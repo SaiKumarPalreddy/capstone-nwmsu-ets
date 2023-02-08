@@ -10,6 +10,8 @@ import { HeaderComponent } from './UI/header/header.component';
 import { FooterComponent } from './UI/footer/footer.component';
 import { MainComponent } from './UI/main/main.component';
 import { HomeComponent } from './Components/home/home.component';
+import { Page404Component } from './Components/page404/page404.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { HomeComponent } from './Components/home/home.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
