@@ -1,0 +1,20 @@
+<main class="sidenav">
+    <mat-drawer-container class="example-container">
+      <mat-drawer mode="side" opened>
+        <div>
+          <ul class="nav flex-column">
+            <li class="nav-item"> <a href="#" routerLink="/home" routerLinkActive="active" class="nav-link">View Dashboard</a>
+            </li>
+            <li class="nav-item"> <a href="#" routerLink="/events" routerLinkActive="active" class="nav-link"> My Events</a>
+            </li>
+            <!-- <li><a href="#" routerLink="/" routerLinkActive="active">View My Events</a></li> -->
+          </ul>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content>
+          <div class="container-fluid">
+              <router-outlet> </router-outlet>
+          </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </main>

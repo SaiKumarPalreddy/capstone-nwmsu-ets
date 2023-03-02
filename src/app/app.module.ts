@@ -11,7 +11,9 @@ import { FooterComponent } from './UI/footer/footer.component';
 import { MainComponent } from './UI/main/main.component';
 import { HomeComponent } from './Components/home/home.component';
 import { Page404Component } from './Components/page404/page404.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventsComponent } from './Components/events/events.component';
+import { SidebarComponent } from './ui/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MainComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    EventsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
   ],
