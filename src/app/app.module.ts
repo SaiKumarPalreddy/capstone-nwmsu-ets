@@ -14,6 +14,10 @@ import { Page404Component } from './Components/page404/page404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventsComponent } from './Components/events/events.component';
 import { SidebarComponent } from './ui/sidebar/sidebar.component';
+import { DownloadReportsComponent } from './components/download-reports/download-reports.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CreateCertificateComponent } from './components/create-certificate/create-certificate.component';
+import { AttendeesComponent } from './components/attendees/attendees.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { SidebarComponent } from './ui/sidebar/sidebar.component';
     HomeComponent,
     Page404Component,
     EventsComponent,
-    SidebarComponent
+    SidebarComponent,
+    DownloadReportsComponent,
+    ProfileComponent,
+    CreateCertificateComponent,
+    AttendeesComponent
   ],
   imports: [
     BrowserModule,

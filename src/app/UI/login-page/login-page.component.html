@@ -15,8 +15,8 @@
             <form [formGroup]="loginForm" >
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
-                  <input type="email"  class="form-control" id="email" formControlName="email" aria-describedby="emailHelp">
-                  <div id="email" class="form-text text-danger" *ngIf="loginForm.get('email').hasError('pattern')">Please enter valid #SID</div>
+                  <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp" required>
+                  <div id="email" class="form-text text-danger" *ngIf="loginForm.get('email').hasError('pattern')">Please enter valid email</div>
                  
                 </div>
                 <div class="mb-3">

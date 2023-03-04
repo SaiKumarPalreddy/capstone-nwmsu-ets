@@ -1,13 +1,13 @@
 .sidenav{
     height: 76vh;
  }
- .example-container {
+ .drawerContainer {
     width: 100%;
     height: 100%;
     border: 1px solid #555;
   }
   li {
-    padding: 0px 24px;
+    padding: 6px 24px;
     &.active{
     border-bottom: #006747 2px solid;
     }

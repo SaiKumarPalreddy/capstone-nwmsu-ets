@@ -5,7 +5,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class AuthServiceService {
-// private login_url = "../../../assets/data/userList.json";
+private login_url = "../../../assets/data/userList.json";
 
   // constructor(private http: HttpClient) { }
 // login(user: any){
