@@ -1,1 +1,21 @@
-<app-download-reports></app-download-reports>
+<div class="allEvents">
+    <div class="row">
+        <div class="col-3" *ngFor="let e of events">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>{{e.eventName}}</mat-card-title>
+                  <mat-card-subtitle>{{e.eventDescription}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>{{e.location}}</p>
+                  <p>{{e.date}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <!-- <button mat-button>View Event</button> -->
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+    
+      
+</div>

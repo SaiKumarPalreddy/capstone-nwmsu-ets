@@ -11,32 +11,41 @@ import { AuthServiceService } from 'src/app/shared/auth/auth-service.service';
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup | any;
   submitted = false;
-  loginUserData = {email:"", password:""};
+  loginUserData = {email:"test@nwmissouri.edu", password:"test@123$"};
   constructor(private formBuilder: FormBuilder,private route: Router, private auth: AuthServiceService) { }
  
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required,Validators.pattern('^[A-Za-z._%+-]+@nwmissouri.edu')]],
-      password: ['', [Validators.required]]
+      email: ['test@nwmissouri.edu', [Validators.required,Validators.pattern('^[A-Za-z._%+-]+@nwmissouri.edu')]],
+      password: ['test@123$', [Validators.required]]
   });
 }
 get f() { return this.loginForm.controls; }
 onSubmit() {
   this.submitted = true;
-  if( this.loginForm.invalid) {
+  if( !this.loginForm.invalid) {
     this.route.navigate(['/home']);
+    // console.log(`login`);
   }
   
 }
 
-// login() {
+// onSubmit() {
+//   console.log(this.loginUserData);
+//   this.submitted = true;
 // this.auth.login(this.loginUserData).subscribe(
-//   (res:any) => {
-//     // this.route.navigate(['/home'])
-//     console.log('login response',res)
-//   },
-//   err => console.log('login response',err)
+//   res => {
+//     this.route.navigate(['/home'])
+//   }
 
-// )
-// }
+  
+// )}
+
+
 }
+// {
+//   next(response){
+//     // this.route.navigate(['/home'])
+//     console.log('login response',response)
+//   }
+// }

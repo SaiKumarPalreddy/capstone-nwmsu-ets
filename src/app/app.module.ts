@@ -18,6 +18,8 @@ import { DownloadReportsComponent } from './components/download-reports/download
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreateCertificateComponent } from './components/create-certificate/create-certificate.component';
 import { AttendeesComponent } from './components/attendees/attendees.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EventsFormComponent } from './Components/events/events-form/events-form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { AttendeesComponent } from './components/attendees/attendees.component';
     DownloadReportsComponent,
     ProfileComponent,
     CreateCertificateComponent,
-    AttendeesComponent
+    AttendeesComponent,
+    EventsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { AttendeesComponent } from './components/attendees/attendees.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

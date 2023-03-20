@@ -1,0 +1,6 @@
+ [
+    {"eventName": "Chess", "eventDescription":"Chess for masters students", "date":"04/04/2023","location":"Student Union Ball Room","createdBy":"Sai" },
+    {"eventName": "Basketball", "eventDescription":"Basketball for masters students", "date":"04/06/2023","location":"Student Rec center","createdBy":"Sai" },
+    {"eventName": "Cricket", "eventDescription":"Cricket for masters students", "date":"04/08/2023","location":"Student Rec center","createdBy":"xyz" },
+    {"eventName": "Volleyball", "eventDescription":"Volleyvball for masters students", "date":"04/16/2023","location":"Student Rec center","createdBy":"xyz" }
+ ]
