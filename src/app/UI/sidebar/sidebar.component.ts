@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   navList:any = [
     {navBarItem:"View Dashboard",routerLink:"/home"},
-    {navBarItem:"Manage Events",routerLink:"/events"},
-    {navBarItem:"Manage Attendees",routerLink:"/manageAttendees"},
-    {navBarItem:"Generate Reports",routerLink:"/downloadReport"},
+    {navBarItem:"My Events",routerLink:"/events"},
+    {navBarItem:"Attendance",routerLink:"/manageAttendees"},
+    {navBarItem:"Generate Report",routerLink:"/downloadReport"},
     {navBarItem:"Create Certificate",routerLink:"/createCertificate"},
     {navBarItem:"My Profile",routerLink:"/myprofile"},
 

@@ -20,6 +20,9 @@ import { CreateCertificateComponent } from './components/create-certificate/crea
 import { AttendeesComponent } from './components/attendees/attendees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EventsFormComponent } from './Components/events/events-form/events-form.component';
+import { AttendeesDialogComponent } from './Components/attendees/attendees-dialog/attendees-dialog.component';
+import { ReportsDialogComponent } from './Components/download-reports/reports-dialog/reports-dialog.component';
+import { ReportsSelectDialogComponent } from './Components/download-reports/reports-select-dialog/reports-select-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { EventsFormComponent } from './Components/events/events-form/events-form
     ProfileComponent,
     CreateCertificateComponent,
     AttendeesComponent,
-    EventsFormComponent
+    EventsFormComponent,
+    AttendeesDialogComponent,
+    ReportsDialogComponent,
+    ReportsSelectDialogComponent
   ],
   imports: [
     BrowserModule,

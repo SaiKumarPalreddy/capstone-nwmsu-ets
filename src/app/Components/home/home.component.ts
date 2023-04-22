@@ -8,7 +8,9 @@ import { EventsService } from 'src/app/shared/events/events.service';
 })
 export class HomeComponent implements OnInit{
    public events:any = [];
-   constructor(private _events:EventsService){}
+   constructor(private _events:EventsService){
+    
+   }
 
    ngOnInit(){
     this._events.getEvents()

@@ -10,10 +10,10 @@
         /></a>
       </div>
       <div class="col-6 logoText">
-        <a href="/home">Northwest Missouri State University</a>
+        <a href="/home">Northwest Missouri State University <br><br> Event Tracking System</a>
       </div>
-      <div class="col-5 text-end">
-        <a href="/login" class="btn btn-success">Log Out</a>
+      <div class="col-5 text-end" *ngFor="let user of currentUser ">
+        <a href="/login" class="logOut">{{user.firstName | titlecase}} | Log Out</a>
       </div>
     </div>
   </div>

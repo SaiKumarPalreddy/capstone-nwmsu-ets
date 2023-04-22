@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  currentUser:any;
+constructor(){
+  // this.userName = localStorage.getItem('userName');
+  this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  console.log(this.currentUser,"user");
+  
+}
 }

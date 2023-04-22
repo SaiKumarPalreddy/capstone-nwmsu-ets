@@ -17,6 +17,8 @@
     font-size: 1rem;
     &.active{
         color: #006747;
+    border-bottom: #006747 2px solid;
+
     }
   }
   mat-drawer{

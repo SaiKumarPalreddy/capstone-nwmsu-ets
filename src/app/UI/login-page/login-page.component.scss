@@ -1,11 +1,29 @@
 $primaryColor:#006747;
-
+.credNotification{
+    position: absolute;
+    text-align: center;
+    top: -20px;
+    >span{
+        background-color: $primaryColor;
+        padding: 9px 8px 9px 78px;
+        color: #fafafa;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        > button {
+            padding-left: 92px;
+            > mat-icon{
+                color: #fafafa;
+            }
+        }
+    }
+}
 .login{
     width: 100%;
     height: calc(100% - 10%);
     padding-left: 20%;
 }
 .logoText{
+    position: relative;
     padding: 40px 20px 0px 80px;
     
     a{

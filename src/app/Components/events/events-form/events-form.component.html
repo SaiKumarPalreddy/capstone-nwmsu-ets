@@ -1,18 +1,78 @@
-<h1 mat-dialog-title>Hi</h1>
+<h1 mat-dialog-title>Create an event:</h1>
 <div mat-dialog-content>
   <form [formGroup]="eventForm">
+    <!-- angular material -->
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event name</mat-label>
+      <input id="eventName" formControlName="eventName" matInput />
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Description</mat-label>
+      <input
+        id="eventDescription"
+        formControlName="eventDescription"
+        matInput
+      />
+    </mat-form-field>
+    <div class="matInputWidth">
+      <p> Event Type</p>
+      <mat-radio-group formControlName="eventType">
+        <mat-radio-button  value="private">Private</mat-radio-button>
+        <mat-radio-button value="public">Public</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Swipe Type</mat-label>
+      <mat-select matNativeControl required formControlName="eventSwipeType">
+        <mat-option value="notRequired">Not Required</mat-option>
+        <mat-option value="in">In</mat-option>
+        <mat-option value="inOut">In/Out </mat-option>
+        <mat-option value="multiple">Multiple</mat-option>
+       
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Select Event Start Date and Event End Date: </mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate  id="fromDate" formControlName="fromDate" placeholder="Event start date" >
+      <input matEndDate  id="toDate" formControlName="toDate" placeholder="Event end date" >
+    </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Time</mat-label>
+      <input id="eventTime" formControlName="eventTime" matInput type="number"/>
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Location</mat-label>
+      <input id="eventLocation" formControlName="eventLocation" matInput/>
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Created By</mat-label>
+      <input  formControlName="createdBy" matInput [value]="name"/>
+    </mat-form-field>
+    <!-- angular material  -->
     <div>
-      <div class="form-group">
+      <!--  <div class="form-group">
         <label for="eventName">Event Name</label>
         <input
           type="text"
           class="form-control"
-          id="eventName"
-          formControlName="eventName"
+          --------------------
+          <label
+      ><input
+        type="radio"
+        formControlName="myRadio"
+        value="blue"
+        name="myRadio"
+      />
+      Blue</label
         />
-      </div>
+        -----------------------------
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="eventDescription">Event Description</label>
         <input
           type="text"
@@ -20,8 +80,8 @@
           id="eventDescription"
           formControlName="eventDescription"
         />
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
         <label for="date">Date</label>
         <input
           type="text"
@@ -29,8 +89,8 @@
           id="date"
           formControlName="date"
         />
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
         <label for="location">Location</label>
         <input
           type="text"
@@ -38,8 +98,8 @@
           id="location"
           formControlName="location"
         />
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
         <label for="createdBy">Created By</label>
         <input
           type="text"
@@ -47,11 +107,11 @@
           id="createdBy"
           formControlName="createdBy"
         />
-      </div>
+      </div> -->
     </div>
   </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-button>No Thanks</button>
-  <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onReset()">Reset</button>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Submit</button>
 </div>

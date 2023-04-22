@@ -1,6 +1,14 @@
+
+
  [
-    {"eventName": "Chess", "eventDescription":"Chess for masters students", "date":"04/04/2023","location":"Student Union Ball Room","createdBy":"Sai" },
-    {"eventName": "Basketball", "eventDescription":"Basketball for masters students", "date":"04/06/2023","location":"Student Rec center","createdBy":"Sai" },
-    {"eventName": "Cricket", "eventDescription":"Cricket for masters students", "date":"04/08/2023","location":"Student Rec center","createdBy":"xyz" },
-    {"eventName": "Volleyball", "eventDescription":"Volleyvball for masters students", "date":"04/16/2023","location":"Student Rec center","createdBy":"xyz" }
- ]
+   {"eventName": "Chess", "eventDescription":"Chess for masters students","eventType":"Private","eventSwipeType":"In","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":9,"eventLocation":"Student Union Ball Room","createdBy":"Sai Kumar" },
+   {"eventName": "Basketball", "eventDescription":"Basketball for masters students", "eventType":"Private","eventSwipeType":"In/Out","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":11,"eventLocation":"Student Rec center","createdBy":"Sai Kumar" },
+   {"eventName": "Cricket", "eventDescription":"Cricket for masters students","eventType":"Public","eventSwipeType":"Multiple","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":10,"eventLocation":"Hughes Field House","createdBy":"Sai Kumar" },
+   {"eventName": "Volleyball", "eventDescription":"Volleyvball for masters students", "eventType":"Public","eventSwipeType":"In","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":11,"eventLocation":"Student Rec center","createdBy":"Sai Kumar" },
+   {"eventName": "BBQ with SAC", "eventDescription":"BBQ with SAC for Everyone","eventType":"Public","eventSwipeType":"In","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":2,"eventLocation":"Student Union Ball Room","createdBy":"sumanth" },
+   {"eventName": "Yoga", "eventDescription":"Yoga for Everyone", "eventType":"Private","eventSwipeType":"In/Out","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":9,"eventLocation":"Student Rec center","createdBy":"sumanth" },
+   {"eventName": "DONUTS Day", "eventDescription":"DONUTS DAY for masters students","eventType":"Public","eventSwipeType":"Multiple","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":1030,"eventLocation":"Student Union Ball Room","createdBy":"varsha" },
+   {"eventName": "Thank A Donar", "eventDescription":"Thank A Donar for Everyone", "eventType":"Public","eventSwipeType":"In","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":11,"eventLocation":"Colden hall","createdBy":"Vikas" },
+   {"eventName": "Homecoming Walk-Out Day", "eventDescription":"Homecoming Walk-out Day for masters students","eventType":"Private","eventSwipeType":"Multiple","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":4,"eventLocation":"Student Union Ball Room","createdBy":"Vikas" },
+   {"eventName": "Grocery Bingo", "eventDescription":"Grocery Bingo for masters students", "eventType":"Private","eventSwipeType":"In/Out","fromDate":"2023-06-10T14:22:18Z","toDate":"2023-06-10T14:22:18Z","eventTime":2,"eventLocation":"Student Rec center","createdBy":"harshitha" }
+]

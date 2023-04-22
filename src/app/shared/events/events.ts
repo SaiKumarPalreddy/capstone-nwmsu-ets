@@ -3,5 +3,5 @@ export interface Ievents{
     eventDescription:string,
     date:string,
     location:string,
-    createdBy:String
+    // createdBy:String
 }

@@ -11,24 +11,56 @@ import { EventsFormComponent } from './events-form/events-form.component';
 
 export class EventsComponent implements OnInit {
   public events:any = [];
-
-  constructor(private _events:EventsService,public dialog: MatDialog){}  
+  privateEvents:any = [];
+  publicEvents:any = [];
+  currentUser;
+  constructor(private _events:EventsService,public dialog: MatDialog){
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  }  
   ngOnInit(){
    this._events.getEvents()
-   .subscribe(data => this.events = data);
-   console.log(`events ${this.events}`);   
+   .subscribe(data => {
+    this.events = data ;
+    // console.log("the events",this.events) ;
+    this.events.forEach((e:any) => {
+     if(e.eventType == 'Private'){
+      this.privateEvents.push(e)
+     }
+     else{
+     this.publicEvents.push(e)
+     }
+    }); 
+    } );
+ 
+   
  }
- openDialog(e:any): void {
+ openDialog(): void {
   const dialogRef = this.dialog.open(EventsFormComponent, {
-    data: {e},
+    width: '500px',
+    // data: {}
   });
 
-  dialogRef.afterClosed().subscribe(result => {
-    this.events.push(result.value.userData);
+  dialogRef.afterClosed().subscribe(data => {
+    console.log("Result",data);
+    
+    // this.events.push(data.value.userData);
     console.log('The dialog was closed',this.events);
   });
 }
- edit(e:any){
-  this.openDialog(e)  
- }
+//  edit(e:any){
+//   this.openDialog(e)  
+//  }
+
+
+
+ deletePrivateEvent(index:any) {
+  
+  this.privateEvents.splice(index, 1);
+ 
+}
+deletePublicEvent(index:any) {
+  
+  this.publicEvents.splice(index, 1);
+ 
+}
 }

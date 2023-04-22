@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
-
+@import '../../../styles.scss';
 .cursive {
   font-family: 'Pinyon Script', cursive;
 }
@@ -10,6 +10,7 @@
 
 .bold {
   font-weight: bold;
+  // background-image: url('../../');
 }
 
 .block {
@@ -17,7 +18,7 @@
 }
 
 .underline {
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid $primaryColor;
   padding: 5px;
   margin-bottom: 15px;
 }
