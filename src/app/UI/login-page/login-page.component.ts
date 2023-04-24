@@ -54,7 +54,7 @@ onSubmit() {
     this.show = true;
     setTimeout(() =>{
       this.show = !this.show;
-    },10000);
+    },3000);
     // alert(this.f.email.value + " or " + this.f.password.value + " are invalid" )
   }
 }
