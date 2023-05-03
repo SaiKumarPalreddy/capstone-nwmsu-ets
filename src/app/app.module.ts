@@ -23,6 +23,8 @@ import { EventsFormComponent } from './Components/events/events-form/events-form
 import { AttendeesDialogComponent } from './Components/attendees/attendees-dialog/attendees-dialog.component';
 import { ReportsDialogComponent } from './Components/download-reports/reports-dialog/reports-dialog.component';
 import { ReportsSelectDialogComponent } from './Components/download-reports/reports-select-dialog/reports-select-dialog.component';
+import { AttendeesFormDialogComponent } from './Components/attendees/attendees-form-dialog/attendees-form-dialog.component';
+import { PrivateAttendeesComponent } from './Components/events/private-attendees/private-attendees.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ReportsSelectDialogComponent } from './Components/download-reports/repo
     EventsFormComponent,
     AttendeesDialogComponent,
     ReportsDialogComponent,
-    ReportsSelectDialogComponent
+    ReportsSelectDialogComponent,
+    AttendeesFormDialogComponent,
+    PrivateAttendeesComponent
   ],
   imports: [
     BrowserModule,

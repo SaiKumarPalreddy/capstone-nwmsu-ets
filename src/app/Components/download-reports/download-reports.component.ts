@@ -14,6 +14,7 @@ export class DownloadReportsComponent implements OnInit {
   publicEvents:any = [];
   currentUser;
   userName: string = "";
+  yesterday = new Date();
   constructor(private _events:EventsService,public dialog: MatDialog){
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     this.currentUser.forEach((element:any) => {
@@ -21,6 +22,7 @@ export class DownloadReportsComponent implements OnInit {
       // console.log(element.firstName);
       
     });
+    this.yesterday.setDate(this.yesterday.getDate() - 0);
   }  
   ngOnInit(){
     this._events.getEvents()
@@ -28,11 +30,8 @@ export class DownloadReportsComponent implements OnInit {
      this.events = data ;
      // console.log("the events",this.events) ;
      this.events.forEach((e:any) => {
-      if(e.eventType == 'Private'){
+      if(e.createdBy == this.userName){
        this.privateEvents.push(e)
-      }
-      else{
-      this.publicEvents.push(e)
       }
      }); 
      } );

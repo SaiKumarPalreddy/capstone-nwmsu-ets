@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Ievents } from 'src/app/shared/events/events';
 import { EventsComponent } from '../events.component';
+import { PrivateAttendeesComponent } from '../private-attendees/private-attendees.component';
 // import { DialogData } from '../form-model';
 
 @Component({
@@ -14,9 +15,10 @@ export class EventsFormComponent implements OnInit{
   @Input() min: any;
   yesterday = new Date();
   eventForm:FormGroup;
-  disabled = true;
-  name:any;
-  constructor(
+  hide = true;
+  user:any;
+  userName:any;
+  constructor(public dialog: MatDialog,
     public dialogRef: MatDialogRef<EventsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
@@ -25,38 +27,52 @@ export class EventsFormComponent implements OnInit{
           'eventDescription':new FormControl(null,[Validators.required]),
           'eventType':new FormControl(null,[Validators.required]),
           'eventSwipeType': new FormControl(),
-          'fromDate':new FormControl(),
-          'toDate':new FormControl(),
+          'startDate':new FormControl(this.yesterday),
+          'endDate':new FormControl(this.yesterday),
           'eventTime': new FormControl(null,Validators.pattern('^[0-9]')),
+          'eventBufferTime': new FormControl(),
           'eventLocation':new FormControl(null,[Validators.required]),
-          'createdBy':new FormControl({value:this.name, disabled : true},[Validators.required]),
+          'createdBy':new FormControl("Sai Kumar",[Validators.required]),
       }); 
       this.yesterday.setDate(this.yesterday.getDate() - 0);
        
   }
   ngOnInit(){
-    //  this.editData();
-     this.name = localStorage.getItem('userName');
+     this.editData();
+     this.user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+     this.user.forEach((e:any) => {
+      this.userName = e.firstName;
+     });
+     console.log("user", this.userName);
+     
   }
-  // editData(){
+  editData(){
+    console.log("eventForm",this.eventForm);
     
-  // this.eventForm.controls['eventName'].setValue(this.data.e.eventName);
-  // this.eventForm.controls['eventDescription'].setValue(this.data.e.eventDescription);
-  // this.eventForm.controls['eventType'].setValue(this.data.e.eventType);
-  // this.eventForm.controls['eventSwipeType'].setValue(this.data.e.eventSwipeType);
-  // this.eventForm.controls['fromDate'].setValue(this.data.e.fromDate);
-  // this.eventForm.controls['toDate'].setValue(this.data.e.toDate);
-  // this.eventForm.controls['eventLocation'].setValue(this.data.e.eventLocation);
-  // this.eventForm.controls['createdBy'].setValue(this.data.e.createdBy);
-
-  // console.log("form info",this.eventForm.controls);
-  // }
+  this.eventForm.controls['eventName'].setValue(this.data.eventName);
+  this.eventForm.controls['eventDescription'].setValue(this.data.eventDescription);
+  this.eventForm.controls['eventType'].setValue(this.data.eventType);
+  this.eventForm.controls['eventSwipeType'].setValue(this.data.eventSwipeType);
+  this.eventForm.controls['startDate'].setValue(this.data.startDate);
+  this.eventForm.controls['endDate'].setValue(this.data.endDate);
+  this.eventForm.controls['eventTime'].setValue(this.data.endDate);
+  this.eventForm.controls['eventBufferTime'].setValue(this.data.eventBufferTime);
+  this.eventForm.controls['eventLocation'].setValue(this.data.eventLocation);
+  this.eventForm.controls['createdBy'].setValue(this.data.createdBy);
+  }
 
   onNoClick(): void {
     this.dialogRef.close(this.eventForm);
+    console.log("closed update dialog", this.eventForm);
+    
   }
   onReset() {
     this.eventForm.reset();
 }
- 
+openDialog(){
+  const dialogRef = this.dialog.open(PrivateAttendeesComponent, {
+    // width: '500px',
+  });
+
+}
 }

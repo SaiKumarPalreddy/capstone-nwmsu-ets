@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatSort, Sort} from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { AttendeesFormDialogComponent } from '../attendees-form-dialog/attendees-form-dialog.component';
 export interface PeriodicElement {
   no:number;
   n19:number;
@@ -18,11 +20,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {no:3,n19:919614511,sid: "S546913", firstName: 'varsha', lastName:"gajula", email: 'varsha@nwmissouri.edu',clockIn:'2023-06-10T14:22:18Z' , clockOut:'2023-06-10T14:22:18Z'},
   {no:4,n19:919613689,sid: "S546914", firstName: 'sumanth', lastName:"poduri", email: 'sumanth@nwmissouri.edu',clockIn:'2023-06-10T14:22:18Z' , clockOut:'2023-06-10T14:22:18Z'},
   {no:5,n19:919644789,sid: "S546915", firstName: 'harshitha', lastName:"rakasi", email: 'harshitha@nwmissouri.edu',clockIn:'2023-06-10T14:22:18Z' , clockOut:'2023-06-10T14:22:18Z'},
-  // {no:6,n19:919605661,sid: "S546916", firstName: 'Carbon', lastName: "", email: 'C',clockIn:'' , clockOut:''},
-  // {no:7,n19:919614551,sid: "S546917", firstName: 'Nitrogen', lastName: "", email: 'N',clockIn:'' , clockOut:''},
-  // {no:8,n19:919614568,sid: "S546918", firstName: 'Oxygen', lastName: "", email: 'O',clockIn:'' , clockOut:''},
-  // {no:9,n19:919614825,sid: "S546919", firstName: 'Fluorine', lastName:"", email: 'F',clockIn:'' , clockOut:''},
-  // {no:10,n19:919618465,sid: "S546910", firstName: 'Neon', lastName: "", email: 'Ne',clockIn:'' , clockOut:''},
 ];
 @Component({
   selector: 'app-attendees-dialog',
@@ -32,7 +29,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AttendeesDialogComponent implements AfterViewInit{
   @ViewChild(MatSort) sort: MatSort | any;
   displayedColumns: string[] = ['no','n19','sid', 'firstName', 'lastName', 'email','clockIn','clockOut'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource(ELEMENT_DATA);  
+  constructor(public dialog: MatDialog){}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -41,5 +39,29 @@ export class AttendeesDialogComponent implements AfterViewInit{
   ngAfterViewInit() {
     // this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  openEditDialog(row:PeriodicElement) {
+    console.log('Row clicked', row);
+    const dialog = this.dialog.open(AttendeesFormDialogComponent, {
+      width: '500px',
+      // Can be closed only by clicking the close button
+      disableClose: true,
+      data: row
+    });
+  }
+  openPostAttendance(){
+    const dialog = this.dialog.open(AttendeesFormDialogComponent, {
+      width: '500px',
+      
+    });
+    dialog.afterClosed().subscribe(data => {
+    
+      this.dataSource = data.value
+      console.log(data.value);
+      
+      
+    });
+  
   }
 }

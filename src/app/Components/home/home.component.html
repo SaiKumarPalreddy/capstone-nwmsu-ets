@@ -12,10 +12,10 @@
                   <p class="py-2"><mat-icon #tooltip="matTooltip"
                     matTooltip="description">description</mat-icon> {{e.eventDescription}}</p>
                   <p>
-                    <mat-icon #tooltip="matTooltip" matTooltip="date">date_range</mat-icon> <span class="pb-5"> {{e.fromDate | date:'mm-dd-yyyy'}} </span>
+                    <mat-icon #tooltip="matTooltip" matTooltip="date">date_range</mat-icon> <span class="pb-5"> {{e.startDate | date:'MM-dd-yyyy'}} </span>
                   </p>
                   <p>
-                    <mat-icon #tooltip="matTooltip" matTooltip="time">update</mat-icon> <span class="pb-5"> {{e.fromDate | date:'h:mm a'}} </span>
+                    <mat-icon #tooltip="matTooltip" matTooltip="time">update</mat-icon> <span class="pb-5"> {{e.endDate | date:'h:mm a'}} </span>
                   </p>
                     <p><mat-icon #tooltip="matTooltip" matTooltip="Type of event">person</mat-icon> {{e.eventType}}</p>
                     <!-- <p>{{e.createdBy}}</p> -->

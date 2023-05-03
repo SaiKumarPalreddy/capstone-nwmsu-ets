@@ -30,10 +30,10 @@ export class AttendeesComponent implements OnInit {
     this.events = data ;
     // console.log("the events",this.events) ;
     this.events.forEach((e:any) => {
-     if(e.eventType == 'Private'){
+     if(e.eventType == 'Private' && e.createdBy == "Sai Kumar"){
       this.privateEvents.push(e)
      }
-     else{
+      else if(e.eventType == 'Public' && e.createdBy == "Sai Kumar"){
      this.publicEvents.push(e)
      }
     }); 
@@ -48,4 +48,6 @@ export class AttendeesComponent implements OnInit {
       // console.log(`Dialog result: ${result}`);
     });
   }
+
+
 }
