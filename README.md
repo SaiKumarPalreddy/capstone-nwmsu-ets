@@ -1,27 +1,29 @@
 # NWMSUETS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Install Node.js and npm on your system if they are not already installed. You can download them from the official website: https://nodejs.org/en/download/
 
-## Development server
+Open your command prompt or terminal and navigate to the directory where you want to clone the Angular application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clone the repository of the Angular application from GitHub using the following command:
 
-## Code scaffolding
+#git clone <repository_url>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Replace <repository_url> with the URL of the GitHub repository you want to clone.
 
-## Build
+Navigate to the cloned repository using the following command:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#cd <repository_name>
 
-## Running unit tests
+Replace <repository_name> with the name of the cloned repository.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install the dependencies required to run the application using the following command:
 
-## Running end-to-end tests
+#npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Once the dependencies are installed successfully, you can start the Angular application using the following command:
 
-## Further help
+#ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Wait for a few seconds until the Angular application is compiled and starts running. Once it's done, you should see a message in the command prompt or terminal saying something like "Compiled successfully" and "Local: http://localhost:4200".
+
+Open your web browser and navigate to the URL http://localhost:4200. You should see the Angular application running on your local machine.
